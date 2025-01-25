@@ -1,0 +1,181 @@
+.heas{
+   display:flex;
+   flex-direction: row;
+   padding: 20px;
+}
+/* Загальні стилі */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff5722; /* Помаранчевий колір для фону */
+    color: #ffffff; /* Білий текст */
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .f {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+  }
+  
+  .gift {
+    background-color: #ffc107; /* Жовтий */
+    color: #000000;
+  }
+  
+  a:hover {
+    background-color: #e0a800;
+  }
+  
+  .up {
+    background-color: #ffffff;
+    color: #ff5722;
+  }
+  
+  .up:hover {
+    background-color: #f1f1f1;
+  }
+
+
+main {
+    width: 90%; /* Ширина основного блоку */
+    margin: 0 auto; /* Вирівнювання по центру */
+    padding: 20px; /* Внутрішні відступи */
+    background-color: #fff; /* Колір фону main */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тінь для краси */
+    position: relative; /* Для анімації */
+}
+body{
+    margin:0;
+    background-color: #e0a800;
+    
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f8f8f8;
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  .header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .header nav ul li {
+    margin: 0;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 2rem;
+    background-image: url('sushi-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+  
+  .specials {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card h3 {
+    margin: 1rem 0;
+  }
+  
+  .card p {
+    padding: 0 1rem;
+  }
+  
+  .card button {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #008080;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .gallery {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .thumbnails img {
+    width: 100px;
+    height: auto;
+    margin: 0.5rem;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f8f8f8;
+  }
