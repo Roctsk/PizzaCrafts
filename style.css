@@ -1,49 +1,25 @@
-.heas{
-   display:flex;
-   flex-direction: row;
-   padding: 20px;
-}
-/* Загальні стилі */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+
+
   
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-  }
   
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ff5722; /* Помаранчевий колір для фону */
-    color: #ffffff; /* Білий текст */
-    padding: 10px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
   
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
   
-  .nav {
-    display: flex;
-    gap: 15px;
-  }
   
-  .f {
+  
+  
+  
+  
+  a {
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    background-color: #ffc107; /* Жовтий */
     transition: background-color 0.3s;
     text-decoration: none;
+    color:white;
   }
   
   .gift {
@@ -51,18 +27,16 @@
     color: #000000;
   }
   
-  a:hover {
-    background-color: #e0a800;
-  }
+  
+  
   
   .up {
     background-color: #ffffff;
     color: #ff5722;
   }
   
-  .up:hover {
-    background-color: #f1f1f1;
-  }
+  
+  
 
 
 main {
@@ -84,10 +58,34 @@ body{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #333;
+    background-color: #e0a800;
   }
   
   .header {
@@ -95,21 +93,31 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #f8f8f8;
+    background-color: #ff5722;
+    
+    color:white;
   }
   
   .header h1 {
-    margin: 0;
-  }
+    margin: 0 20px; /* Отступ для заголовка */
+    font-size: 2rem;
+    flex-grow: 1; /* Дает возможность занимать доступное пространство */
+}
   
   .header nav ul {
     list-style: none;
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap; /* Если не помещается, перенос на новую строку */
+    padding: 0;
+    margin: 0;
   }
+
+  
   
   .header nav ul li {
     margin: 0;
+    
   }
   
   .hero {
@@ -179,3 +187,58 @@ body {
     padding: 1rem;
     background-color: #f8f8f8;
   }
+  .up {
+    background-color: #000;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+a:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header h1 {
+        margin: 10px 0;
+    }
+
+    .header nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .ava img {
+        width: 80px; 
+    }
+}
+.ava img {
+    width: 60px; 
+    height: auto; 
+    margin: 0;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.checkout {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
