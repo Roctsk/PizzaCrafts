@@ -1,14 +1,4 @@
 
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
   a {
     padding: 10px 20px;
     font-size: 16px;
@@ -16,36 +6,30 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #ffc107; /* Жовтий */
+    background-color: #ffc107;
     transition: background-color 0.3s;
     text-decoration: none;
     color:white;
   }
   
-  .gift {
-    background-color: #ffc107; /* Жовтий */
-    color: #000000;
-  }
-  
-  
-  
-  
-  .up {
-    background-color: #ffffff;
-    color: #ff5722;
-  }
-  
-  
-  
+.gift {
+  background-color: #ffc107;
+  color: #000000;
+}
+
+.up {
+background-color: #ffffff;
+color: #ff5722;
+}  
 
 
 main {
-    width: 90%; /* Ширина основного блоку */
-    margin: 0 auto; /* Вирівнювання по центру */
-    padding: 20px; /* Внутрішні відступи */
-    background-color: #fff; /* Колір фону main */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тінь для краси */
-    position: relative; /* Для анімації */
+    width: 90%; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background-color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 body{
     margin:0;
@@ -53,26 +37,6 @@ body{
     
     font-family: Arial, Helvetica, sans-serif;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -222,23 +186,4 @@ a:hover {
     width: 60px; 
     height: auto; 
     margin: 0;
-}
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    border-radius: 5px;
-}
-.checkout {
-    margin-top: 20px;
-    padding: 10px;
-    font-size: 18px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
