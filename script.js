@@ -57,4 +57,32 @@ function checkout() {
 
 
 window.onload = displayCartItems;
-   
+//вв
+const isLoggedIn = localStorage.getItem("loggedInUser");
+
+if (!isLoggedIn) {
+    // Якщо користувач не авторизований, перенаправляємо на сторінку реєстрації
+    window.location.href = "index2.html";
+}
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let age = document.getElementById("age").value;
+
+    if (!email || !password || !age) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    if (age < 13) {
+        alert("You must be at least 13 years old to register.");
+        return;
+    }
+
+    // Зберігаємо email користувача в localStorage
+    localStorage.setItem("loggedInUser", email);
+
+    alert("Registration successful!");
+    window.location.href = "index.html"; // Перенаправлення на головну сторінку
+});

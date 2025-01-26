@@ -1,0 +1,111 @@
+
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PizzaCraft</title>
+    
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        
+        <h1>Welcome to PizzaCraft</h1>
+        <p>Find new ideas to try</p>
+        <form id="signupForm">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Create a password" required>
+            <input type="number" id="age" placeholder="Age" required>
+            <button type="submit" class="btn">Continue</button>
+        </form>
+        <p>OR</p>
+        <button class="btn facebook">Continue with Facebook</button>
+        <button class="btn google">Continue with Google</button>
+        <p class="terms">By continuing, you agree to PizzaCraft <a href="#">Terms of Service</a>, <a href="#">Privacy policy</a>.</p>
+        <p>Already a member? <a href="index2.html">Log in</a></p>
+        <a href="#" class="business-account">Create a business account</a>
+    </div>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.logo {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e60023;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #c5001a;
+}
+
+.facebook {
+    background-color: #1877f2;
+}
+
+.google {
+    background-color: #db4437;
+}
+
+.terms {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.business-account {
+    display: block;
+    margin-top: 10px;
+    color: #e60023;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+</style>
+    <script src="script.js"></script>
+</body>
+</html>
