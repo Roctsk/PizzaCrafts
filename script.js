@@ -80,9 +80,8 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
         return;
     }
 
-    // Зберігаємо email користувача в localStorage
     localStorage.setItem("loggedInUser", email);
 
     alert("Registration successful!");
-    window.location.href = "index.html"; // Перенаправлення на головну сторінку
+    window.location.href = "index.html";
 });
