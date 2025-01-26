@@ -1,0 +1,95 @@
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("img/imgs_5.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.logister {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    border: 2px solid rgba(255,255,255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    padding: 20px 40px;
+    border-radius: 25px;
+    width: 300px;
+    text-align: center;
+}
+
+.logister h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+}
+
+.logister input[type="text"],
+.logister input[type="password"] {
+    background-color: transparent;
+    border: 2px solid rgba(255,255,255, .2);
+    color:white;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.options a {
+    color: white;
+    text-decoration: none;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+.logister button {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    color:black;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.label{
+    color:white;
+}
+    
+
+
+.logister p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: white;
+}
+
+.logister p a {
+    color: white;
+    text-decoration: none;
+}
+
+.logister p a:hover {
+    text-decoration: underline;
+}
