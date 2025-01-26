@@ -198,31 +198,7 @@ a:hover {
     height: auto; 
     margin: 0;
 }
+
 main{
   background-color: #000000;
 }
-
-
-
-
-#index1
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  background-color: #fff;
-  border-radius: 5px;
-}
-.checkout {
-  margin-top: 20px;
-  padding: 10px;
-  font-size: 18px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-#end #index1
