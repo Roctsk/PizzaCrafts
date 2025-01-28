@@ -5,21 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style_2.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
     <title>Login</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="logister">
         <h1>Login</h1>
-        <input type="text" placeholder="Username">
-        <input type="password" placeholder="Password">
+        <div class="user">
+            <input type="text" placeholder="Username">
+            <i class='bx bx-user'></i>
+        </div>
+        <div class="lock">
+            <input type="password" placeholder="Password">
+            <i class='bx bx-lock-alt'></i>
+        </div>
         <div class="options">
-            <input type="checkbox" id="remember">
-            <label for="remember">Remember me</label>
+            <label for="remember">
+                <input type="checkbox" id="remember">
+                Remember me
+            </label>
             <a href="#">Forgot password</a>
         </div>
-        <button>Login</button>
-        <p>Don't have an account? <a href="#">Register</a></p>
-    </div>
+        <button id="login-btn">Login</button>
+        <p>Don't have an account? <a href="#" style="font-weight:bold;" id="register-btn">Register</a></p>
+
+
+    <script src="script.js"></script>
 </body>
 </html>
