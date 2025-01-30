@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -10,101 +9,82 @@
   <script defer src="script.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="ava">
-            <img src="img/logo.jpg" alt="Логотип">
+  <header class="header">
+    <div class="ava">
+        <img src="img/logo.jpg" alt="Логотип">
+    </div>
+    <h1>PizzaCraft</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="#">Створити Піцу</a></li>
+            <li><a href="#">Меню</a></li>
+            <li><a href="#">Про нас</a></li>
+            <li><a href="#" class="cart-icon" onclick="window.location.href='cart.html'">
+                <span class="cart-count">0</span> Кошик
+            </a></li>
+            <li><a href="#" class="up" onclick="window.location.href='index2.html'">Sign up</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+
+    <!-- Секція з піцами -->
+    <div class="generatys">
+        <img src="img/pizza.png" alt="Pizza">
+        <h1>PizzaCraft - найсмачніші піци та суші для вас!</h1>
+    </div>
+
+    <!-- Спеціальні пропозиції -->
+    <section class="specials">
+        <h2>Суші Д’Експешн</h2>
+        <div class="cards">
+            <!-- Карточки піц -->
+            <div class="card">
+                <img src="img/pizza_1.jpg" alt="Драгон">
+                <h3>Драгон</h3>
+                <p>Кожен шматочок вирізаний з точністю для незабутнього смаку.</p>   
+                <button onclick="addToCart('Драгон', 300)">Купити 300 грн</button>
+            </div>
+
+            <div class="card">
+                <img src="img/pizza_3.jpg" alt="Делюкс">
+                <h3>Делюкс</h3>
+                <p>Розкішні суші з найкращими інгредієнтами.</p>
+                <button onclick="addToCart('Делюкс', 400)">Купити 400 грн</button>
+            </div>
+
+            <div class="card">
+                <img src="img/pizza_2.jpg" alt="Вегетаріанські">
+                <h3>Вегетаріанські</h3>
+                <p>Ідеально підійдуть для любителів овочів.</p>
+                <button onclick="addToCart('Вегетаріанські', 250)">Купити 250 грн</button>
+            </div>
+
+            <div class="card">
+                <img src="img/pizza_4.jpg" alt="Вегетаріанські">
+                <h3>Вегетаріанські</h3>
+                <p>Ідеально підійдуть для любителів овочів.</p>
+                <button onclick="addToCart('Вегетаріанські', 250)">Купити 250 грн</button>
+            </div>
         </div>
-        <h1>PizzaCraft</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Головна</a></li>
-                <li><a href="#">Створити Піцу</a></li>
-                <li><a href="#">Меню</a></li>
-                <li><a href="#">Про нас</a></li>
-                <li><a href="#" class="up" onclick="window.location.href='index2.html'">Sign up</a></li>
-            </ul>
-        </nav>
-    </header>
-  <div class="generatys">
-    <img src="img/pizza.png">
-    <h1>PizzaCraft
-      Тут буде про коипанію
-      Тут буде про коипанію
-      Тут буде про коипанію
-      Тут буде про коипанію
-      Тут буде про коипаніюv
+    </section>
 
-      Тут буде про коипанію
-    </h1>
-  </div>
-  <section class="specials">
-    <h2>Суші Д’Експешн</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="img/pizza_1.jpg">
-        <h3>Драгон</h3>
-        <p>Кожен шматочок вирізаний з точністю для незабутнього смаку.</p>   
-        <button onclick="addToCart('Драгон', 300)">Купити 300 грн</button>
-      </div>
+    <!-- Галерея -->
+    <section class="gallery">
+        <h2>Найкращі суші</h2>
+        <div class="thumbnails">
+            <img src="maki.jpg" alt="Maki">
+            <img src="nigiri.jpg" alt="Nigiri">
+            <img src="sashimi.jpg" alt="Sashimi">
+            <img src="roll.jpg" alt="Roll">
+        </div>
+    </section>
 
-      <div class="card">
-        <img src="img/pizza_3.jpg" alt="Deluxe">
-        <h3 class="wi">Делюкс</h3>
-        <p>Розкішні суші з найкращими інгредієнтами.</p>
-        <button onclick="addToCart('Делюкс', 400)">Купити 400 грн</button>
-      </div>
-
-      <div class="card">
-        <img src="img/pizza_2.jpg" alt="Vegetarian">
-        <h3>Вегетаріанські</h3>
-        <p>Ідеально підійдуть для любителів овочів.</p>
-        <button onclick="addToCart('Вегетаріанські', 250)">Купити 250 грн</button>
-      </div>
-
-      <div class="card">
-        <img src="img/pizza_4.jpg" alt="Vegetarian">
-        <h3>Вегетаріанські</h3>
-        <p>Ідеально підійдуть для любителів овочів.</p>
-        <button onclick="addToCart('Вегетаріанські', 250)">Купити 250 грн</button>
-      </div>
-    </div>
-
-  </section>
-
-  <section class="gallery">
-    <h2>Найкращі суші</h2>
-    <div class="thumbnails">
-      <img src="maki.jpg" alt="Maki">
-      <img src="nigiri.jpg" alt="Nigiri">
-      <img src="sashimi.jpg" alt="Sashimi">
-      <img src="roll.jpg" alt="Roll">
-    </div>
-  </section>
-  <a href="index1.html">Перейти до кошика</a>
-  <footer class="footer">
-    <p>© 2025 Sushi Club. Усі права захищені.</p>
-    <p>Контакти: +380 44 123 4567</p>
-  </footer>
-  <script>
-    function logout() {
-        localStorage.removeItem("loggedInUser");
-        window.location.href = "index2.html";
-    }
-</script>
+    <footer class="footer">
+        <p>© 2025 Sushi Club. Усі права захищені.</p>
+        <p>Контакти: +380 44 123 4567</p>
+    </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-    
-    
-    
-
-    
-    
-
-    

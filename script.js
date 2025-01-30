@@ -1,12 +1,25 @@
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-
+// Функція для додавання товару в кошик
 function addToCart(name, price) {
     cart.push({ name, price });
-    localStorage.setItem('cart', JSON.stringify(cart)); 
+    localStorage.setItem('cart', JSON.stringify(cart));
     alert(`${name} додано до кошика!`);
+
+    // Оновлюємо лічильник кошика
+    updateCartCount();
 }
+
+// Функція для оновлення кількості товарів у кошику
+function updateCartCount() {
+    const cartCount = document.querySelector('.cart-count');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cartCount.textContent = cart.length;
+}
+
+// Оновлюємо лічильник кошика при завантаженні сторінки
+window.onload = updateCartCount;
 
 
 function displayCartItems() {
@@ -57,3 +70,40 @@ function checkout() {
 
 
 window.onload = displayCartItems;
+
+document.getElementById('go-to-register').addEventListener('click', function(e) {
+    e.preventDefault();
+    let loginForm = document.getElementById('login-form');
+    let registerForm = document.getElementById('register-form');
+
+    // Спочатку плавно приховуємо login форму
+    loginForm.classList.remove('active');
+    loginForm.classList.add('hide');
+
+    setTimeout(() => {
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'flex';
+        registerForm.classList.remove('hide');
+        registerForm.classList.add('active');
+    }, 200); // Час анімації збігається з CSS
+});
+
+document.getElementById('go-to-login').addEventListener('click', function(e) {
+    e.preventDefault();
+    let loginForm = document.getElementById('login-form');
+    let registerForm = document.getElementById('register-form');
+
+    // Спочатку плавно приховуємо register форму
+    registerForm.classList.remove('active');
+    registerForm.classList.add('hide');
+
+    setTimeout(() => {
+        registerForm.style.display = 'none';
+        loginForm.style.display = 'flex';
+        loginForm.classList.remove('hide');
+        loginForm.classList.add('active');
+    }, 200);
+});
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('login-form').classList.add('active');
+});
