@@ -1,24 +1,21 @@
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Функція для додавання товару в кошик
+
 function addToCart(name, price) {
     cart.push({ name, price });
     localStorage.setItem('cart', JSON.stringify(cart));
     alert(`${name} додано до кошика!`);
 
-    // Оновлюємо лічильник кошика
     updateCartCount();
 }
 
-// Функція для оновлення кількості товарів у кошику
 function updateCartCount() {
     const cartCount = document.querySelector('.cart-count');
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     cartCount.textContent = cart.length;
 }
 
-// Оновлюємо лічильник кошика при завантаженні сторінки
 window.onload = updateCartCount;
 
 
@@ -93,7 +90,6 @@ document.getElementById('go-to-login').addEventListener('click', function(e) {
     let loginForm = document.getElementById('login-form');
     let registerForm = document.getElementById('register-form');
 
-    // Спочатку плавно приховуємо register форму
     registerForm.classList.remove('active');
     registerForm.classList.add('hide');
 

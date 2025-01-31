@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   color: #333;
-  background-color: #f4f4f4; /* Світлий фон для тла */
+  background-color: #f4f4f4;
 }
 
 .header {
@@ -10,7 +10,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 3rem;
-  background-color: #3e2723; /* Темний шоколадний фон */
+  background-color: #3e2723;
   color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -19,7 +19,7 @@ body {
   margin: 0;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #ff7043; /* Пастельний кораловий */
+  color: #ff7043;
   flex-grow: 1;
 }
 
@@ -81,6 +81,9 @@ body {
   width: 280px;
   overflow: hidden;
   transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Вирівнює елементи по вертикалі */
 }
 
 .card:hover {
@@ -94,13 +97,17 @@ body {
 }
 
 .card h3 {
-  margin: 1rem 0;
+  margin: 1rem;
   color: #ff7043;
+  font-size: 1.4rem;
+  flex-grow: 0;
 }
 
 .card p {
   padding: 0 1rem;
   color: #555;
+  font-size: 1rem;
+  flex-grow: 1; 
 }
 
 .card button {
@@ -111,11 +118,14 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin: 0 1rem 1rem 1rem;
+  align-self: center;
 }
 
 .card button:hover {
   background-color: #e64a19;
 }
+
 
 .gallery {
   padding: 3rem 2rem;
@@ -136,8 +146,7 @@ body {
 }
 
 .header nav ul li a.cart-icon {
-  background-color: #ff5722; /* Колір кнопки */
-  color: white;
+  background-color: #ff5722;
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 5px;
@@ -179,4 +188,16 @@ body {
   padding: 2rem;
   background-color: #3e2723;
   color: white;
+}
+
+
+.clear{
+  text-align: center;
+  font-size: 40px;
+  color: #ff7043;
+}
+
+.suum{
+  font-size: 40px;
+  color: #ff7043;
 }
