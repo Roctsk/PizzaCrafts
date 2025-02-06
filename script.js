@@ -106,3 +106,24 @@ document.getElementById('go-to-login').addEventListener('click', function(e) {
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('login-form').classList.add('active');
 });
+
+
+// Функція для відкриття модального вікна
+function openModal(imgSrc, name, description) {
+    document.getElementById("modal-img").src = imgSrc;
+    document.getElementById("modal-title").innerText = name;
+    document.getElementById("modal-description").innerText = description;
+    document.getElementById("modal").style.display = "flex";
+}
+
+// Функція для закриття модального вікна
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+// Закриваємо модальне вікно при кліку на затемнений фон
+document.getElementById("modal").addEventListener("click", function (event) {
+    if (event.target === this) {
+        closeModal();
+    }
+});

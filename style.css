@@ -1,37 +1,8 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   color: #333;
-  background-color: #f4f4f4;
 }
 
 .header {
@@ -62,7 +33,7 @@ body {
 }
 nav ul li {
   margin: 0 15px;
-  position: relative; /* Додаємо відносне позиціонування для правильного розміщення лічильника */
+  position: relative; 
 }
 .header nav ul li {
   margin: 0;
@@ -117,7 +88,7 @@ nav ul li {
   transition: transform 0.3s;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Вирівнює елементи по вертикалі */
+  justify-content: space-between;
 }
 
 .card:hover {
@@ -240,6 +211,185 @@ nav ul li {
 
 
 
+.specials1 {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.specials1 h2 {
+  font-size: 2.5rem;
+  color: #3e2723;
+  margin-bottom: 2rem;
+}
+
+.cards1 {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card1 {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card1:hover {
+  transform: translateY(-5px);
+}
+
+.card1 img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.card1 h3 {
+  margin: 1rem 0;
+  color: #ff7043;
+  font-size: 1.5rem;
+}
+
+.card1 p {
+  padding: 0 1rem;
+  color: #555;
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+.card1 button {
+  background-color: #ff7043;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 1rem;
+}
+
+.card1 button:hover {
+  background-color: #e64a19;
+}
 
 
+.specials1 {
+  padding: 5rem 2rem;
+  text-align: center;
+  background-color: #eee;
+}
 
+.specials1 h2 {
+  font-size: 2.5rem;
+  color: #3e2723;
+  margin-bottom: 2rem;
+}
+
+.cards1 {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card1 {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card1:hover {
+  transform: translateY(-5px);
+}
+
+.card1 img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.card1 h3 {
+  margin: 1rem 0;
+  color: #ff7043;
+  font-size: 1.5rem;
+}
+
+.card1 p {
+  padding: 0 1rem;
+  color: #555;
+  font-size: 1rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  width: 80%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.modal img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-text {
+  padding: 2rem;
+  width: 50%;
+}
+
+.modal-text h2 {
+  font-size: 2rem;
+  color: #3e2723;
+}
+
+.modal-text p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ff7043;
+}
+
+.close:hover {
+  color: #e64a19;
+}
