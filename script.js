@@ -1,21 +1,172 @@
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+document.addEventListener("DOMContentLoaded", function () {
+    updateCart();
+    updateCartCount();
+    displayCartItems();
+});
+
+let products = [
+    { name: 'Товар 1', price: 100, image: 'img/pizza_1.jpg' },
+    { name: 'Товар 2', price: 150, image: 'img/pizza_2.jpg' },
+    { name: 'Товар 3', price: 200, image: 'img/pizza_3.jpg' },
+    { name: 'Товар 4', price: 300, image: 'img/pizza_4.jpg' }
+    
+];
 
 
-function addToCart(name, price) {
-    cart.push({ name, price });
-    localStorage.setItem('cart', JSON.stringify(cart));
+// =========================
+// 🔹 Оновлення кошика
+// =========================
+
+
+
+
+function updateCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cartItemsTbody = document.getElementById("cart-items");
+    let totalPrice = document.getElementById("total-price");
+
+    cartItemsTbody.innerHTML = "";
+    let sum = 0;
+
+    if (cart.length === 0) {
+        cartItemsTbody.innerHTML = `<tr><td colspan="6" class="empty-cart">Ваш кошик порожній </td></tr>`;
+        totalPrice.innerText = "0";
+        return;
+    }
+
+    cart.forEach((item, index) => {
+        let itemTotal = item.price * item.quantity;
+
+        let row = document.createElement("tr");
+        row.innerHTML = `
+            <td><img src="${item.image}" alt="${item.name}" class="cart-item-img"></td> <!-- Зображення товару -->
+            <td>${item.name}</td>
+            <td>${item.price}</td>
+            <td>
+                <button class="btn small" onclick="changeQuantity(${index}, -1)">➖</button>
+                ${item.quantity}
+                <button class="btn small" onclick="changeQuantity(${index}, 1)">➕</button>
+            </td>
+            <td>${itemTotal}</td>
+            <td><button class="btn remove-item" onclick="removeItem(${index})">❌</button></td>
+        `;
+        cartItemsTbody.appendChild(row);
+        sum += itemTotal;
+    });
+
+    totalPrice.innerText = sum;
+}
+// =========================
+// 🔹 Додавання товару до кошика
+// =========================
+// =========================
+
+function addToCart(name, price, image) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    // Шукаємо, чи товар вже є в кошику
+    let existingItem = cart.find(item => item.name === name);
+    
+    if (existingItem) {
+        // Якщо товар вже є, збільшуємо його кількість
+        existingItem.quantity++;
+    } else {
+        // Якщо товару ще немає в кошику, додаємо його
+        cart.push({ name, price, quantity: 1, image });
+    }
+
+    // Оновлюємо кошик в localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Оновлюємо відображення кошика та лічильника
     alert(`${name} додано до кошика!`);
+    updateCart(); // Оновлення кошика на сторінці
+    updateCartCount(); // Оновлення лічильника товарів без перезавантаження сторінки
+}
 
+
+
+
+// =========================
+// 🔹 Оновлення кількості товарів
+// =========================
+function changeQuantity(index, amount) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cart[index].quantity + amount > 0) {
+        cart[index].quantity += amount;
+    } else {
+        cart.splice(index, 1);
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
+    updateCartCount();
+}    
+    
+// =========================    
+// 🔹 Видалення товару    
+// =========================
+function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();                                                                               
     updateCartCount();
 }
+
+
+// =========================
+// 🔹 Очищення кошика
+// =========================
+function clearCart() {
+    localStorage.removeItem("cart");
+    updateCart();
+    updateCartCount();
+}
+
+// =========================
+// 🔹 Оплата
+// =========================
+function checkout() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cart.length === 0) {
+        alert("Ваш кошик порожній! Додайте товар перед оплатою.");
+        return;
+    }
+    alert("Оплата проведена успішно! 🚀");
+    clearCart();
+    
+    window.location.href = "index.html";
+}
+
+
+
+window.onload = displayCartItems;
+
+// =========================
+// 🔹 Оновлення лічильника товарів
+// =========================
+
+
+
+
+
 
 function updateCartCount() {
     const cartCount = document.querySelector('.cart-count');
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cartCount.textContent = cart.length;
+    
+    
+    const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0); 
+    cartCount.textContent = totalCount > 0 ? totalCount : 0; 
 }
 
+
+
+
 window.onload = updateCartCount;
+// =========================
+// 🔹 Відображення товарів у кошику
+// =========================
 
 
 function displayCartItems() {
@@ -46,65 +197,41 @@ function displayCartItems() {
     totalPriceElement.textContent = totalPrice; 
 }
 
-
-function removeFromCart(name) {
-    cart = cart.filter(item => item.name !== name);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    displayCartItems();
-}
-
-
-function checkout() {
-    if (cart.length === 0) {
-        alert('Ваш кошик порожній!');
-        return;
-    }
-    alert('Оплата проведена успішно!');
-    localStorage.removeItem('cart');  
-    window.location.href = 'index.html';  
-}
-
-
-window.onload = displayCartItems;
-
-document.getElementById('go-to-register').addEventListener('click', function(e) {
+// =========================
+// 🔹 Перемикання між формами (Реєстрація/Вхід)
+// =========================
+document.getElementById("go-to-register").addEventListener("click", function(e) {
     e.preventDefault();
-    let loginForm = document.getElementById('login-form');
-    let registerForm = document.getElementById('register-form');
-
-    // Спочатку плавно приховуємо login форму
-    loginForm.classList.remove('active');
-    loginForm.classList.add('hide');
-
-    setTimeout(() => {
-        loginForm.style.display = 'none';
-        registerForm.style.display = 'flex';
-        registerForm.classList.remove('hide');
-        registerForm.classList.add('active');
-    }, 200); // Час анімації збігається з CSS
+    toggleForms("login-form", "register-form");
 });
 
-document.getElementById('go-to-login').addEventListener('click', function(e) {
+document.getElementById("go-to-login").addEventListener("click", function(e) {
     e.preventDefault();
-    let loginForm = document.getElementById('login-form');
-    let registerForm = document.getElementById('register-form');
+    toggleForms("register-form", "login-form");
+});
 
-    registerForm.classList.remove('active');
-    registerForm.classList.add('hide');
+function toggleForms(hideFormId, showFormId) {
+    let hideForm = document.getElementById(hideFormId);
+    let showForm = document.getElementById(showFormId);
+
+    hideForm.classList.remove("active");
+    hideForm.classList.add("hide");
 
     setTimeout(() => {
-        registerForm.style.display = 'none';
-        loginForm.style.display = 'flex';
-        loginForm.classList.remove('hide');
-        loginForm.classList.add('active');
+        hideForm.style.display = "none";
+        showForm.style.display = "flex";
+        showForm.classList.remove("hide");
+        showForm.classList.add("active");
     }, 200);
-});
+}
+
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('login-form').classList.add('active');
+    document.getElementById("login-form").classList.add("active");
 });
 
-
-// Функція для відкриття модального вікна
+// =========================
+// 🔹 Модальне вікно
+// =========================
 function openModal(imgSrc, name, description) {
     document.getElementById("modal-img").src = imgSrc;
     document.getElementById("modal-title").innerText = name;
@@ -113,13 +240,16 @@ function openModal(imgSrc, name, description) {
 }
 
 // Функція для закриття модального вікна
+
 function closeModal() {
     document.getElementById("modal").style.display = "none";
 }
 
 // Закриваємо модальне вікно при кліку на затемнений фон
+
 document.getElementById("modal").addEventListener("click", function (event) {
     if (event.target === this) {
         closeModal();
     }
 });
+

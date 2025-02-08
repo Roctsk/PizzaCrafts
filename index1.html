@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кошик</title>
+    <title>Кошик - PizzaCraft</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/logo.jpg">
 </head>
@@ -23,17 +23,38 @@
             </ul>
         </nav>
     </header>
-<body>
-    
 
-    <div class="shot">
-        <h1 class="clear">Кошик</h1>
-        <div id="cart-items"></div>
-        <p class="suum"><strong>Загальна сума:</strong> <span id="total-price">0</span> грн</p>
-        <button class="checkout" onclick="checkout()">Оплатити</button>
-        <button class="checkout" onclick="window.location.href='index.html'">Повернутися до магазину</button>
-    </div>
+    <main class="cart-container">
+        <h1 class="cart-title">🛒 Ваш кошик</h1>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Зображення</th>
+                    <th>Назва товару</th>
+                    <th>Ціна (грн)</th>
+                    <th>Кількість</th>
+                    <th>Разом (грн)</th>
+                    <th>Дія</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                
+            </tbody>
+        </table>
+        <p class="cart-total"><strong>Загальна сума:</strong> <span id="total-price">0.00</span> грн</p>
+        <div class="cart-buttons">
+            <button class="btn checkout" onclick="checkout()">Оплатити</button>
+            <button class="btn return" onclick="window.location.href='index.html'">⬅ Повернутися</button>
+            <button class="btn clear-cart" onclick="clearCart()">🗑 Очистити</button>
+        </div>
+    </main>
 
     <script defer src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
