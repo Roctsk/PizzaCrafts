@@ -1,0 +1,102 @@
+body {
+    background:gray;
+    height: 100vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    margin: 0;               
+}
+
+.container {
+    position: relative;
+    width: 450px;
+    height: 300px;
+    background: #111;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+}
+
+.container::before, .container::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(45deg, blue, red, green, #ff00ff, yellow, blue, red, green, #ff00ff, yellow);
+    background-size: 300%;
+    z-index: -1;
+    animation: move 12s linear infinite;
+}
+
+.container::before {
+    filter: blur(20px);
+}
+
+@keyframes move {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 300% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    align-items: center;
+    z-index: 1;
+}
+
+button {
+    border-radius: 25px;
+    width: 150px;
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white; 
+    background: linear-gradient(45deg, #ff7e5f, #feb47b); 
+    border: none; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+}
+
+/* Ховер ефект */
+button:hover {
+    background: linear-gradient(45deg, #6a11cb, #2575fc); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.1); 
+}
+
+
+button:active {
+    background: linear-gradient(45deg, #2575fc, #6a11cb); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+    transform: scale(1); 
+}
+
+
+input, textarea {
+    width: 250px;
+    height: 40px;
+    font-size: 18px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea {
+    height: 80px;
+}
