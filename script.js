@@ -5,11 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 let products = [
-    { name: 'Товар 1', price: 100, image: 'img/pizza_1.jpg' },
-    { name: 'Товар 2', price: 150, image: 'img/pizza_2.jpg' },
-    { name: 'Товар 3', price: 200, image: 'img/pizza_3.jpg' },
-    { name: 'Товар 4', price: 300, image: 'img/pizza_4.jpg' }
-    
+    { name: 'Піца 1', price: 100, image: 'img/pizza_1.jpg' },
+    { name: 'Піца 2', price: 150, image: 'img/pizza_2.jpg' },
+    { name: 'Піца 3', price: 200, image: 'img/pizza_3.jpg' },
+    { name: 'Піца 4', price: 300, image: 'img/pizza_4.jpg' },
+    { name: 'Роли 1', price: 120, image: 'img/rolly_1.jpg' },
+    { name: 'Роли 2', price: 180, image: 'img/rolly_2.jpg' },
+    { name: 'Роли 3', price: 220, image: 'img/rolly_3.jpg' },
+    { name: 'Роли 4', price: 250, image: 'img/rolly_4.jpg' }
 ];
 
 
@@ -36,6 +39,7 @@ function updateCart() {
 
     cart.forEach((item, index) => {
         let itemTotal = item.price * item.quantity;
+
 
         let row = document.createElement("tr");
         row.innerHTML = `
