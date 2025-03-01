@@ -1,0 +1,180 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("img/imgs_5.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.logister {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    border: 2px solid rgba(255,255,255, .2);
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    padding: 20px 40px;
+    border-radius: 25px;
+    width: 300px;
+    text-align: center;
+}
+
+.logister h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+}
+
+.logister input[type="text"],
+.logister input[type="password"] {
+    background-color: transparent;
+    border: 2px solid rgba(255,255,255, .2);
+    color:white;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 16px;
+
+}
+.logister input::placeholder {
+    color: rgba(255, 255, 255, 0.7); 
+}
+
+.logister {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    visibility: hidden;
+    display: none;
+}
+
+.logister.active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+}
+
+.logister.hide {
+    opacity: 0;
+    transform: translateY(50px);
+    visibility: hidden;
+}
+
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+input:invalid {
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+
+.options a {
+    color: white;
+    text-decoration: none;
+}
+
+.options input[type="checkbox"] {
+    margin-right: 5px; 
+    background-color: transparent;
+}
+
+.options label{
+    color:#FFFFFF;
+    align-items: center;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+.logister button {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    color:black;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.label{
+    color:white;
+}
+    
+
+
+.logister p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: white;
+}
+
+.logister p a {
+    color: white;
+    text-decoration: none;
+}
+
+.logister p a:hover {
+    text-decoration: underline;
+}
+
+
+.user, .lock {
+    position: relative;
+    margin-bottom: 20px;
+     width: 100%
+}
+
+.user input, .lock input {
+    width: 150%; 
+    max-width: 550px; 
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 50px; 
+    border-radius: 30px;
+    font-size: 20px; 
+    box-sizing: border-box;
+}
+
+.user i, .lock i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 25px;
+}
+
+.checkout {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+.checkout:hover {
+    background-color: #ff7043;
+    color: white;
+  }
